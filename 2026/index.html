@@ -1,237 +1,1123 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>离散数学课程主页</title>
-    <style>
-        body { 
-            font-family: 'Arial', sans-serif; 
-            line-height: 1.6; 
-            background-color: #f8f9fa; 
-            /* background-image: url('https://example.com/your_background_image.jpg'); *//* 添加背景图 */ 
-            background-size: cover;
-            background-attachment: fixed; 
-            color: #333;
-        }
-        .container { 
-            width: 80%; 
-            margin: auto; 
-            overflow: hidden; 
-            background-color: rgba(255, 255, 255, 0.6); /* 半透明白色背景 */
-            border-radius: 10px; /* 增加圆角 */
-            padding: 20px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-        }
-        header { 
-            background: #6f42c1; /* 更改主色调 */
-            color:white; 
-            padding: 10px; 
-            border-radius: 10px 10px 0 0; /* 圆角处理 */
-        }
-        nav { float: right; }
-        nav a { 
-            color: #6f42c1; 
-            text-decoration: none; 
-            padding: 5px 20px; 
-            transition: background 0.3s; /* 平滑过渡效果 */
-        }
-        nav a:hover { 
-            background-color: rgba(255, 255, 255, 0.2); /* 悬停时的背景 */
-        }
-        footer { 
-            background: #6f42c1; 
-            color: white; 
-            text-align: center; 
-            padding: 10px; 
-            border-radius: 0 0 10px 10px; /* 圆角处理 */
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 20px; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 表格阴影 */
-        }
-        th, td { 
-            border: 1px solid #dee2e6; 
-            padding: 8px; 
-            text-align: left; 
-        }
-        th { 
-            background-color: #e9ecef; 
-            font-weight: bold; 
-        }
-        th, td { 
-            max-width: 100px; 
-        }
-        .centered-table th, .centered-table td { 
-            text-align: center; 
-        }
-        .teacher-column { width: 30%; }
-        .content-link, .content-link1 {
-            font-weight: bold; 
-            text-decoration: underline !important; 
-            color: #007bff; 
-        }
-        .content-link:hover, .content-link1:hover {
-            color: #dc3545; 
-        }
-        .content-link:visited, .content-link1:visited {
-            color: #007bff; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>离散数学-I (22000210A) · 2026春 · 3班</title>
 
-        /* 添加字体图标支持 */
-        .fa {
-            font-family: FontAwesome;
-            margin-right: 5px;
-        }
-        
-        /* 自定义标题 */
-        h1, h2 {
-            font-family: 'Georgia', serif; /* 更具艺术感的字体 */
-            color: #6f42c1; /* 标题颜色 */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* 标题阴影 */
-        }
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-        /* 为课程信息添加背景色 */
-        section {
-            margin-bottom: 20px; 
-            padding: 15px;
-            border: 1px solid #dee2e6; 
-            border-radius: 8px; 
-            background-color: #f9f9f9; 
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <!-- 引入FontAwesome图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* =========================
+       Design System (High-end)
+       ========================= */
+    :root{
+      --bg: #0b1020;
+      --bg2:#0f1630;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+      --accent: #7c5cff; /* premium purple */
+      --accent2:#24c6ff;
+      --danger:#ff4d6d;
+      --ok:#2bd576;
+
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --shadow2: 0 10px 30px rgba(0,0,0,.22);
+      --radius: 16px;
+      --radius2: 22px;
+
+      --max: 1120px;
+      --pad: 22px;
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Light mode fallback (if user prefers light) */
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f8fb;
+        --bg2:#ffffff;
+        --card: rgba(10, 12, 25, 0.04);
+        --card2: rgba(10, 12, 25, 0.06);
+        --border: rgba(10, 12, 25, 0.08);
+        --text: rgba(10,12,25,.92);
+        --muted: rgba(10,12,25,.68);
+        --muted2: rgba(10,12,25,.56);
+        --shadow: 0 18px 50px rgba(10,12,25,.12);
+        --shadow2: 0 10px 30px rgba(10,12,25,.10);
+      }
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(36,198,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 70% 110%, rgba(124,92,255,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      min-height:100vh;
+    }
+
+    /* subtle noise */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      opacity:.20;
+      mix-blend-mode: overlay;
+    }
+
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(124,92,255,.65);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .wrap{
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Top Bar
+       ========================= */
+    .topbar{
+      position: sticky;
+      top:0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(10,14,28,.55);
+      border-bottom: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: light){
+      .topbar{ background: rgba(255,255,255,.68); }
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .logo{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.55), transparent 55%),
+        linear-gradient(135deg, rgba(124,92,255,.95), rgba(36,198,255,.85));
+      box-shadow: 0 10px 24px rgba(124,92,255,.22);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.15;
+    }
+    .brand-text .title{
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 14.5px;
+    }
+    .brand-text .sub{
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all .18s ease;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: var(--border);
+    }
+    .nav a i{ opacity:.9; }
+
+    /* Mobile nav */
+    .nav-toggle{
+      display:none;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor:pointer;
+      box-shadow: var(--shadow2);
+    }
+    @media (max-width: 860px){
+      .nav{
+        display:none;
+        width:100%;
+        margin-top: 10px;
+        padding-bottom: 10px;
+      }
+      .topbar-inner{
+        flex-wrap: wrap;
+      }
+      .nav-toggle{ display:inline-flex; align-items:center; gap:10px; }
+      .nav.open{ display:flex; }
+    }
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero{
+      padding: 30px 0 10px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .hero-card{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(700px 260px at 30% 0%, rgba(124,92,255,.22), transparent 60%);
+      pointer-events:none;
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3vw, 34px);
+      letter-spacing: .2px;
+      line-height: 1.2;
+    }
+    .hero p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 70ch;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .aside-card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .aside-title{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 10px;
+    }
+    .aside-title h3{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.2px;
+      color: var(--text);
+    }
+    .badge{
+      font-size:12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .news{
+      border: 1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px;
+      color: var(--muted);
+      line-height:1.6;
+      font-size: 13px;
+    }
+    .news strong{ color: var(--text); }
+
+    .quick{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .qitem{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .qitem i{
+      margin-top: 2px;
+      width: 18px;
+      text-align:center;
+      color: rgba(124,92,255,.95);
+    }
+    .qitem .k{ font-size: 12px; color: var(--muted2); margin:0; }
+    .qitem .v{ font-size: 13px; margin:2px 0 0; color: var(--text); }
+
+    /* =========================
+       Sections
+       ========================= */
+    main{
+      padding: 8px 0 30px;
+    }
+    section{
+      margin-top: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .sec-head{
+      padding: 18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .sec-head h2{
+      margin:0;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing:.3px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .sec-head h2 i{ color: rgba(36,198,255,.9); }
+    .sec-body{
+      padding: 18px 20px 22px;
+    }
+    .sec-body p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* =========================
+       Links / Buttons
+       ========================= */
+    .link{
+      color: rgba(36,198,255,.95);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 650;
+      transition: opacity .15s ease;
+    }
+    .link:hover{ opacity:.85; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      box-shadow: var(--shadow2);
+      font-size: 13px;
+      text-decoration:none;
+      user-select:none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.16);
+    }
+    .btn-primary{
+      border-color: rgba(124,92,255,.35);
+      background: linear-gradient(135deg, rgba(124,92,255,.32), rgba(36,198,255,.22));
+    }
+    .btn-danger{
+      border-color: rgba(255,77,109,.35);
+      background: linear-gradient(135deg, rgba(255,77,109,.22), rgba(124,92,255,.12));
+    }
+
+    /* =========================
+       Layout helpers
+       ========================= */
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    .info-list{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+      margin-top: 8px;
+    }
+    @media (max-width: 720px){
+      .info-list{ grid-template-columns: 1fr; }
+    }
+    .info{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .info i{
+      color: rgba(124,92,255,.95);
+      margin-top: 2px;
+      width: 18px;
+      text-align:center;
+    }
+    .info .k{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .info .v{
+      margin:2px 0 0;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       Tables
+       ========================= */
+    table{
+      width:100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow:hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+    }
+    thead th{
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: .2px;
+      text-align:left;
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    tbody tr:last-child td{ border-bottom:none; }
+    tbody tr:hover td{
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+    }
+    .center td, .center th{ text-align:center; }
+
+    .col-narrow{ width: 180px; }
+    @media (max-width: 720px){
+      .col-narrow{ width: auto; }
+    }
+
+    /* =========================
+       Homework list (better than long <p>)
+       ========================= */
+    .hw{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .hw-item{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .hw-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hw-name{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-weight: 750;
+      color: var(--text);
+    }
+    .hw-name i{ color: rgba(36,198,255,.9); }
+    .deadline{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,77,109,.35);
+      background: rgba(255,77,109,.10);
+      color: rgba(255,255,255,.92);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    @media (prefers-color-scheme: light){
+      .deadline{ color: rgba(10,12,25,.92); }
+    }
+    .hw-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hw-note{
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+    footer{
+      margin-top: 22px;
+      padding: 18px 0 26px;
+      color: var(--muted);
+      text-align:center;
+    }
+
+    /* Back to top */
+    .to-top{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 120;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: all .2s ease;
+    }
+    .to-top.show{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; scroll-behavior:auto; }
+    }
+  </style>
 </head>
-   
+
 <body>
-    <header>
-        <div class="container">
-            <h1>离散数学-I (22000210A) - 2026年春季学期 - 3班</h1>
-            <nav>
-                <a href="#intro"><i class="fas fa-info-circle"></i>课程介绍</a>
-                <a href="#information"><i class="fas fa-calendar-alt"></i>课程信息</a>
-                <a href="#syllabus"><i class="fas fa-book"></i>教学大纲</a>
-                <a href="#homeworks"><i class="fas fa-pencil-alt"></i>家庭作业</a>
-                <a href="#resources"><i class="fas fa-folder-open"></i>课程资源</a>
-                <a href="#contact"><i class="fas fa-envelope"></i>联系方式</a>
-            </nav>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="课程站点信息">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-text">
+            <div class="title">离散数学-I（Discrete Mathematics）</div>
+            <div class="sub">
+              <span class="chip"><i class="fa-solid fa-hashtag"></i> 22000210A</span>
+              <span class="chip"><i class="fa-solid fa-calendar"></i> 2026 春季</span>
+              <span class="chip"><i class="fa-solid fa-users"></i> 3 班</span>
+            </div>
+          </div>
         </div>
-    </header>
 
-    <div class="container">
-        <section id="intro">
-            <h2>课程介绍</h2>
-            <p>离散数学（Discrete Mathematics）集成了数学中的多个不同分支，它主要研究离散对象的数学结构。离散数学是计算机科学与技术的基础。本课程在介绍数理逻辑入门知识和数学证明方法的基础上，系统地介绍集合、归纳与递归、关系、代数系统、计数与离散概率、图与树等基本的离散结构及相关的理论，使学生系统地掌握相关的数学模型、基本理论及应用技术。本课程是学习计算机科学与技术专业其它核心课程必须的数学基础课程，是理解数据结构、算法设计与分析、计算模型等学科分支的必备课程，对培养学生的抽象思维、逻辑推理以及问题求解能力有重要意义。</p>
-        </section>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <i class="fa-solid fa-bars"></i> 菜单
+        </button>
 
-        <section id="information">
-            <h2>课程信息</h2>
-            <p>授课老师：<a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" class="content-link1">史颖欢</a> 教授</p>
-            <p>上课时间：周三 2-4节 (9: 00-12: 00)</p>
-            <p>上课地点：鼓楼校区 费A-201</p>
-            <p>课程QQ群：待定</p>
-            <p>助教：待定</p>
-            <p>If you encounter any issues with viewing, downloading course materials, or submitting assignments on this course website, 
-                please feel free to contact Cheng Zihan (email: czh@smail.nju.edu.cn; QQ:1433368350). What' more, if you have any compliments, descriptions, or complaints (about strengths or weaknesses) 
-                regarding our class's Discrete Mathematics course, please feel free to fill out <a href="https://wj.sjtu.edu.cn/q/eMFNv3uP" target="_blank" class="content-link1">this questionnaire</a>. 
-                Rest assured, this survey is completely anonymous. Your input is very valuable in helping us further improve the course and encouraging us to keep up the good work.</p>
-            <p style="color: red; font-weight: bold;">Important News：
-                None.</p>
-        </section>
-
-        <section id="syllabus">
-            <h2>教学大纲</h2>
-            <table>        
-                <tr><th>章节</th><th>内容</th><th>课程资源</th></tr>
-                <tr><th>〇、课程概况</th><td>1. 课程概况</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/00_%E8%AF%BE%E7%A8%8B%E6%A6%82%E5%86%B5.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
-                <tr><th>一、逻辑与证明</th><td>1. 命题逻辑</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/01_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91.pdf" target="_blank" class="content-link">上课课件</a>，
-                <a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
-                <tr><td></td><td>2. 命题逻辑（续）</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/02_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%EF%BC%88%E7%BB%AD%EF%BC%89.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
-                <tr><td></td><td>3. 谓词逻辑初步</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/03_%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%88%9D%E6%AD%A5.pdf" target="_blank" class="content-link">上课课件</a>
-                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%BA%8C%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
-                <tr><td></td><td>4. 证明方法</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/04_%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
-            </table>
-        </section>
-        
-        <section id="homeworks">
-            <h2>家庭作业</h2>
-            <p> 作业提交的注意事项请大家参考<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">第一次习题课课件</a>。<br>
-                [1] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework1.pdf" target="_blank" class="content-link">homework-1</a>，
-                请在<strong><font color="red">2月25日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/mkeRZ8Gg" target="_blank" class="content-link">这里</a>。
-                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/solution1.pdf" target="_blank" class="content-link">答案</a><br>
-                [2] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework2.pdf" target="_blank" class="content-link">homework-2</a>，
-                请在<strong><font color="red">3月4日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/ERsTekNZ" target="_blank" class="content-link">这里</a>。
-                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/solution2.pdf" target="_blank" class="content-link">答案</a><br>
-                [3] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework3.pdf" target="_blank" class="content-link">homework-3</a>，
-                请在<strong><font color="red">3月4日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/xnffS9Mc" target="_blank" class="content-link">这里</a>。
-                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework3_solutions(10%E9%A2%98).pdf" target="_blank" class="content-link">答案</a><br>
-                [4] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_problem.pdf" target="_blank" class="content-link">homework-4</a>，
-                请在<strong><font color="red">3月11日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/LfEAosTJ" target="_blank" class="content-link">这里</a>。
-                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_solution.pdf" target="_blank" class="content-link">答案</a><br>
-                [5] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_problem.pdf" target="_blank" class="content-link">homework-5</a>，
-                请在<strong><font color="red">3月18日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/X5v8fENz" target="_blank" class="content-link">这里</a>。
-                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_solution.pdf" target="_blank" class="content-link">答案</a><br>
-<br>
-<br>
-            </p>
-        </section>
-        
-        <section id="resources">
-            <h2>课程资源</h2></h2>
-            <p>[1] <a href="https://box.nju.edu.cn/f/f3d92b641090432ea396/" target="_blank" class="content-link1">第七版</a>，仅限于课堂交流，建议购买原版，目前使用的是原书第八版。<br>
-            [2] <a href="https://box.nju.edu.cn/f/4e8153e3862f4f5c87da/" target="_blank" class="content-link1">离散数学（曲婉玲等）-代数系统、群、格与布尔代数部分.pdf</a>，仅限于课堂交流。<br>
-            </p>  
-        </section>
-
-        <section id="contact">
-            <h2>联系方式</h2>
-            <!-- 教师信息表格 -->
-            <table class="centered-table">
-                <tr>
-                    <th class="teacher-column">教师</th>
-                    <th>邮箱</th>
-                    <th>办公室</th>
-                </tr>
-                <tr>
-                    <td class="teacher-column"><a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" class="content-link1">史颖欢</a></td>
-                    <td>syh@nju.edu.cn</td>
-                    <td>计算机系楼-508（仙林）</td>
-                </tr>
-            </table>
-
-            <p></p>
-
-            <!-- 助教信息表格 -->
-            <table class="centered-table">
-                <tr>
-                    <th>助教</th>
-                    <th>邮箱</th>
-                    <th>QQ</th>
-                </tr>
-                <tr>
-                    <td><a href="https://zzwdx.github.io/" target="_blank" class="content-link1">王曦染</a> (22级博士生)</td>
-                    <td>zzwdx@smail.nju.edu.cn</td>
-                    <td>1967282230</td>
-                </tr>
-                <tr>
-                    <td><a href="https://orange-czh.github.io/" target="_blank" class="content-link1">程子涵</a> (24级博士生)</td>
-                    <td>czh@smail.nju.edu.cn</td>
-                    <td>1433368350</td>
-                </tr>
-            </table>
-            <p></p>
-        </section>
+        <nav class="nav" id="navMenu" aria-label="页面导航">
+          <a href="#intro"><i class="fa-solid fa-circle-info"></i>课程介绍</a>
+          <a href="#information"><i class="fa-solid fa-calendar-days"></i>课程信息</a>
+          <a href="#syllabus"><i class="fa-solid fa-book-open"></i>教学大纲</a>
+          <a href="#homeworks"><i class="fa-solid fa-pen-to-square"></i>家庭作业</a>
+          <a href="#resources"><i class="fa-solid fa-folder-open"></i>课程资源</a>
+          <a href="#contact"><i class="fa-solid fa-envelope"></i>联系方式</a>
+        </nav>
+      </div>
     </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-card" role="region" aria-label="课程总览">
+          <h1>离散数学-I (22000210A) · 2026年春季学期 · 3班</h1>
+          <p>
+            离散数学（Discrete Mathematics）研究离散对象的结构与性质，是计算机科学与技术的核心数学基础。
+            本课程覆盖数理逻辑、证明方法、集合与关系、代数系统、计数与离散概率、图与树等主题，强调抽象建模、逻辑推理与问题求解能力。
+          </p>
+
+          <div class="hero-meta">
+            <span class="chip"><i class="fa-solid fa-chalkboard-user"></i> 授课：史颖欢 教授</span>
+            <span class="chip"><i class="fa-solid fa-location-dot"></i> 鼓楼 · 费A-201</span>
+            <span class="chip"><i class="fa-solid fa-clock"></i> 周三 2-4节（9:00-12:00）</span>
+          </div>
+        </div>
+
+        <aside class="aside-card" aria-label="重要通知与快捷信息">
+          <div class="aside-title">
+            <h3><i class="fa-solid fa-bullhorn"></i> Important News</h3>
+            <span class="badge">更新：2026</span>
+          </div>
+          <div class="news">
+            <strong>None.</strong><br/>
+            如有临时通知（补交、答疑、教室调整等）会在此处更新。
+          </div>
+
+          <div class="quick">
+            <div class="qitem">
+              <i class="fa-solid fa-comments"></i>
+              <div>
+                <p class="k">课程QQ群</p>
+                <p class="v">待定</p>
+              </div>
+            </div>
+            <div class="qitem">
+              <i class="fa-solid fa-user-gear"></i>
+              <div>
+                <p class="k">助教</p>
+                <p class="v">待定</p>
+              </div>
+            </div>
+            <div class="qitem">
+              <i class="fa-solid fa-life-ring"></i>
+              <div>
+                <p class="k">材料/作业技术支持</p>
+                <p class="v">
+                  Cheng Zihan：<span style="font-family:var(--mono)">czh@smail.nju.edu.cn</span> / QQ: 1433368350
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="https://wj.sjtu.edu.cn/q/eMFNv3uP" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-clipboard-list"></i> 匿名课程反馈问卷
+          </a>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- 课程介绍 -->
+    <section id="intro">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-circle-info"></i>课程介绍</h2>
+        <a class="btn" href="#information"><i class="fa-solid fa-arrow-down"></i>查看课程信息</a>
+      </div>
+      <div class="sec-body">
+        <p>
+          离散数学（Discrete Mathematics）集成了数学中的多个不同分支，主要研究离散对象的数学结构。
+          离散数学是计算机科学与技术的基础。本课程在介绍数理逻辑入门知识和数学证明方法的基础上，
+          系统地介绍集合、归纳与递归、关系、代数系统、计数与离散概率、图与树等基本的离散结构及相关理论，
+          使学生系统掌握数学模型、基本理论及应用技术。
+        </p>
+        <p>
+          本课程是学习计算机科学与技术专业其它核心课程必须的数学基础课程，
+          是理解数据结构、算法设计与分析、计算模型等学科分支的必备课程，
+          对培养抽象思维、逻辑推理以及问题求解能力有重要意义。
+        </p>
+      </div>
+    </section>
+
+    <!-- 课程信息 -->
+    <section id="information">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-calendar-days"></i>课程信息</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
+          <a class="btn" href="#homeworks"><i class="fa-solid fa-pen-to-square"></i>跳转作业</a>
+          <a class="btn" href="#resources"><i class="fa-solid fa-folder-open"></i>跳转资源</a>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="info-list" role="list">
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+            <div>
+              <p class="k">授课老师</p>
+              <p class="v">
+                <a class="link" href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" rel="noopener noreferrer">史颖欢</a> 教授
+              </p>
+            </div>
+          </div>
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <div>
+              <p class="k">上课时间</p>
+              <p class="v">周三 2-4节（9:00-12:00）</p>
+            </div>
+          </div>
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <p class="k">上课地点</p>
+              <p class="v">鼓楼校区 · 费A-201</p>
+            </div>
+          </div>
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+            <div>
+              <p class="k">课程QQ群</p>
+              <p class="v">待定</p>
+            </div>
+          </div>
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+            <div>
+              <p class="k">助教</p>
+              <p class="v">待定</p>
+            </div>
+          </div>
+          <div class="info" role="listitem">
+            <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            <div>
+              <p class="k">材料/作业技术支持</p>
+              <p class="v">
+                Cheng Zihan（邮箱：<span style="font-family:var(--mono)">czh@smail.nju.edu.cn</span>；QQ：1433368350）
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="https://wj.sjtu.edu.cn/q/eMFNv3uP" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-shield-heart"></i> 匿名反馈（compliments / complaints）
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教学大纲 -->
+    <section id="syllabus">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-book-open"></i>教学大纲</h2>
+        <span class="badge">Lecture Slides</span>
+      </div>
+      <div class="sec-body">
+        <table aria-label="教学大纲表格">
+          <thead>
+            <tr>
+              <th class="col-narrow">章节</th>
+              <th>内容</th>
+              <th class="col-narrow">课程资源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>〇、课程概况</td>
+              <td>1. 课程概况</td>
+              <td>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/00_%E8%AF%BE%E7%A8%8B%E6%A6%82%E5%86%B5.pdf" target="_blank" rel="noopener noreferrer">
+                  上课课件
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>一、逻辑与证明</td>
+              <td>1. 命题逻辑</td>
+              <td>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/01_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91.pdf" target="_blank" rel="noopener noreferrer">上课课件</a>
+                <span style="color:var(--muted)"> · </span>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" rel="noopener noreferrer">习题课课件</a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>2. 命题逻辑（续）</td>
+              <td>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/02_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%EF%BC%88%E7%BB%AD%EF%BC%89.pdf" target="_blank" rel="noopener noreferrer">
+                  上课课件
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>3. 谓词逻辑初步</td>
+              <td>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/03_%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%88%9D%E6%AD%A5.pdf" target="_blank" rel="noopener noreferrer">上课课件</a>
+                <span style="color:var(--muted)"> · </span>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%BA%8C%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" rel="noopener noreferrer">习题课课件</a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>4. 证明方法</td>
+              <td>
+                <a class="link" href="https://gitee.com/nju-orange/DM2025/raw/master/04_%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95.pdf" target="_blank" rel="noopener noreferrer">
+                  上课课件
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 家庭作业 -->
+    <section id="homeworks">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-pen-to-square"></i>家庭作业</h2>
+        <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-circle-question"></i> 提交注意事项（习题课课件）
+        </a>
+      </div>
+      <div class="sec-body">
+        <div class="hw" aria-label="作业列表">
+          <div class="hw-item">
+            <div class="hw-top">
+              <div class="hw-name"><i class="fa-solid fa-file-pdf"></i> homework-1</div>
+              <div class="deadline"><i class="fa-solid fa-hourglass-half"></i> 截止：2月25日 10:00（PDF）</div>
+            </div>
+            <div class="hw-actions">
+              <a class="btn btn-primary" href="https://gitee.com/nju-orange/DM2025/raw/master/homework1.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> 题目
+              </a>
+              <a class="btn" href="https://wj.sjtu.edu.cn/q/mkeRZ8Gg" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> 提交
+              </a>
+              <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/solution1.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-key"></i> 答案
+              </a>
+              <a class="btn btn-danger" href="#contact"><i class="fa-solid fa-triangle-exclamation"></i> 补交联系助教</a>
+            </div>
+            <div class="hw-note">补交请联系王曦染助教。</div>
+          </div>
+
+          <div class="hw-item">
+            <div class="hw-top">
+              <div class="hw-name"><i class="fa-solid fa-file-pdf"></i> homework-2</div>
+              <div class="deadline"><i class="fa-solid fa-hourglass-half"></i> 截止：3月4日 10:00（PDF）</div>
+            </div>
+            <div class="hw-actions">
+              <a class="btn btn-primary" href="https://gitee.com/nju-orange/DM2025/raw/master/homework2.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> 题目
+              </a>
+              <a class="btn" href="https://wj.sjtu.edu.cn/q/ERsTekNZ" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> 提交
+              </a>
+              <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/solution2.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-key"></i> 答案
+              </a>
+              <a class="btn btn-danger" href="#contact"><i class="fa-solid fa-triangle-exclamation"></i> 补交联系助教</a>
+            </div>
+            <div class="hw-note">补交请联系王曦染助教。</div>
+          </div>
+
+          <div class="hw-item">
+            <div class="hw-top">
+              <div class="hw-name"><i class="fa-solid fa-file-pdf"></i> homework-3</div>
+              <div class="deadline"><i class="fa-solid fa-hourglass-half"></i> 截止：3月4日 10:00（PDF）</div>
+            </div>
+            <div class="hw-actions">
+              <a class="btn btn-primary" href="https://gitee.com/nju-orange/DM2025/raw/master/homework3.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> 题目
+              </a>
+              <a class="btn" href="https://wj.sjtu.edu.cn/q/xnffS9Mc" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> 提交
+              </a>
+              <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/homework3_solutions(10%E9%A2%98).pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-key"></i> 答案
+              </a>
+              <a class="btn btn-danger" href="#contact"><i class="fa-solid fa-triangle-exclamation"></i> 补交联系助教</a>
+            </div>
+            <div class="hw-note">补交请联系王曦染助教。</div>
+          </div>
+
+          <div class="hw-item">
+            <div class="hw-top">
+              <div class="hw-name"><i class="fa-solid fa-file-pdf"></i> homework-4</div>
+              <div class="deadline"><i class="fa-solid fa-hourglass-half"></i> 截止：3月11日 10:00（PDF）</div>
+            </div>
+            <div class="hw-actions">
+              <a class="btn btn-primary" href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_problem.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> 题目
+              </a>
+              <a class="btn" href="https://wj.sjtu.edu.cn/q/LfEAosTJ" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> 提交
+              </a>
+              <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_solution.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-key"></i> 答案
+              </a>
+              <a class="btn btn-danger" href="#contact"><i class="fa-solid fa-triangle-exclamation"></i> 补交联系助教</a>
+            </div>
+            <div class="hw-note">补交请联系刘思远助教。</div>
+          </div>
+
+          <div class="hw-item">
+            <div class="hw-top">
+              <div class="hw-name"><i class="fa-solid fa-file-pdf"></i> homework-5</div>
+              <div class="deadline"><i class="fa-solid fa-hourglass-half"></i> 截止：3月18日 10:00（PDF）</div>
+            </div>
+            <div class="hw-actions">
+              <a class="btn btn-primary" href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_problem.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> 题目
+              </a>
+              <a class="btn" href="https://wj.sjtu.edu.cn/q/X5v8fENz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> 提交
+              </a>
+              <a class="btn" href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_solution.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-key"></i> 答案
+              </a>
+              <a class="btn btn-danger" href="#contact"><i class="fa-solid fa-triangle-exclamation"></i> 补交联系助教</a>
+            </div>
+            <div class="hw-note">补交请联系李熠城助教。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 课程资源 -->
+    <section id="resources">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-folder-open"></i>课程资源</h2>
+        <span class="badge">Shared Materials</span>
+      </div>
+      <div class="sec-body">
+        <div class="grid-2">
+          <div class="info">
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <div>
+              <p class="k">教材（第七版）</p>
+              <p class="v">
+                <a class="link" href="https://box.nju.edu.cn/f/f3d92b641090432ea396/" target="_blank" rel="noopener noreferrer">第七版</a>（仅限课堂交流；建议购买原版；目前使用原书第八版）
+              </p>
+            </div>
+          </div>
+
+          <div class="info">
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <div>
+              <p class="k">补充资料</p>
+              <p class="v">
+                <a class="link" href="https://box.nju.edu.cn/f/4e8153e3862f4f5c87da/" target="_blank" rel="noopener noreferrer">
+                  离散数学（曲婉玲等）-代数系统、群、格与布尔代数部分.pdf
+                </a>（仅限课堂交流）
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact">
+      <div class="sec-head">
+        <h2><i class="fa-solid fa-envelope"></i>联系方式</h2>
+        <a class="btn" href="#intro"><i class="fa-solid fa-arrow-up"></i>返回顶部</a>
+      </div>
+      <div class="sec-body">
+        <p style="margin-bottom:14px;">
+          建议优先通过邮件沟通，邮件主题可包含“离散数学-I + 班级 + 关键词”，以便更快定位问题。
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <p style="margin:0 0 10px;color:var(--muted2);font-size:12px;">教师</p>
+            <table class="center" aria-label="教师联系表">
+              <thead>
+                <tr>
+                  <th>教师</th>
+                  <th>邮箱</th>
+                  <th>办公室</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="link" href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" rel="noopener noreferrer">史颖欢</a>
+                  </td>
+                  <td><span style="font-family:var(--mono)">syh@nju.edu.cn</span></td>
+                  <td>计算机系楼-508（仙林）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <p style="margin:0 0 10px;color:var(--muted2);font-size:12px;">助教</p>
+            <table class="center" aria-label="助教联系表">
+              <thead>
+                <tr>
+                  <th>助教</th>
+                  <th>邮箱</th>
+                  <th>QQ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="link" href="https://zzwdx.github.io/" target="_blank" rel="noopener noreferrer">王曦染</a>（22级博士生）
+                  </td>
+                  <td><span style="font-family:var(--mono)">zzwdx@smail.nju.edu.cn</span></td>
+                  <td>1967282230</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="link" href="https://orange-czh.github.io/" target="_blank" rel="noopener noreferrer">程子涵</a>（24级博士生）
+                  </td>
+                  <td><span style="font-family:var(--mono)">czh@smail.nju.edu.cn</span></td>
+                  <td>1433368350</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <footer>
-        <p>祝各位同学学习顺利！ &copy; 2026</p>
+      <div class="wrap">
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+          <span class="chip"><i class="fa-solid fa-lock"></i> 内容仅供课堂交流</span>
+          <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i> High-end course layout</span>
+        </div>
+        <p style="margin:12px 0 0;">祝各位同学学习顺利！ &copy; 2026</p>
+      </div>
     </footer>
-     <script src="dist/canvas-nest.js" type="text/javascript" color="255,0,0" opacity="0.75" count="150" ></script>
+  </main>
+
+  <!-- Back to top floating button -->
+  <a class="btn to-top" id="toTop" href="#intro" aria-label="返回顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const btn = document.getElementById('navToggle');
+      const nav = document.getElementById('navMenu');
+      if(!btn || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      // Close menu after clicking a nav link on mobile
+      nav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          if(window.matchMedia('(max-width: 860px)').matches){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
+      });
+    })();
+
+    // Back to top visibility
+    (function(){
+      const t = document.getElementById('toTop');
+      if(!t) return;
+      const onScroll = () => {
+        if(window.scrollY > 600) t.classList.add('show');
+        else t.classList.remove('show');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <!-- Optional canvas effect (keep subtle; remove if not needed) -->
+  <script src="dist/canvas-nest.js" type="text/javascript" color="124,92,255" opacity="0.18" count="90"></script>
 </body>
 </html>
-
-
