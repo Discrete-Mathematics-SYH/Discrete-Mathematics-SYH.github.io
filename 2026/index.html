@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离散数学课程主页</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            line-height: 1.6; 
+            background-color: #f8f9fa; 
+            /* background-image: url('https://example.com/your_background_image.jpg'); *//* 添加背景图 */ 
+            background-size: cover;
+            background-attachment: fixed; 
+            color: #333;
+        }
+        .container { 
+            width: 80%; 
+            margin: auto; 
+            overflow: hidden; 
+            background-color: rgba(255, 255, 255, 0.6); /* 半透明白色背景 */
+            border-radius: 10px; /* 增加圆角 */
+            padding: 20px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+        header { 
+            background: #6f42c1; /* 更改主色调 */
+            color:white; 
+            padding: 10px; 
+            border-radius: 10px 10px 0 0; /* 圆角处理 */
+        }
+        nav { float: right; }
+        nav a { 
+            color: #6f42c1; 
+            text-decoration: none; 
+            padding: 5px 20px; 
+            transition: background 0.3s; /* 平滑过渡效果 */
+        }
+        nav a:hover { 
+            background-color: rgba(255, 255, 255, 0.2); /* 悬停时的背景 */
+        }
+        footer { 
+            background: #6f42c1; 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            border-radius: 0 0 10px 10px; /* 圆角处理 */
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 表格阴影 */
+        }
+        th, td { 
+            border: 1px solid #dee2e6; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #e9ecef; 
+            font-weight: bold; 
+        }
+        th, td { 
+            max-width: 100px; 
+        }
+        .centered-table th, .centered-table td { 
+            text-align: center; 
+        }
+        .teacher-column { width: 30%; }
+        .content-link, .content-link1 {
+            font-weight: bold; 
+            text-decoration: underline !important; 
+            color: #007bff; 
+        }
+        .content-link:hover, .content-link1:hover {
+            color: #dc3545; 
+        }
+        .content-link:visited, .content-link1:visited {
+            color: #007bff; 
+        }
+
+        /* 添加字体图标支持 */
+        .fa {
+            font-family: FontAwesome;
+            margin-right: 5px;
+        }
+        
+        /* 自定义标题 */
+        h1, h2 {
+            font-family: 'Georgia', serif; /* 更具艺术感的字体 */
+            color: #6f42c1; /* 标题颜色 */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* 标题阴影 */
+        }
+
+        /* 为课程信息添加背景色 */
+        section {
+            margin-bottom: 20px; 
+            padding: 15px;
+            border: 1px solid #dee2e6; 
+            border-radius: 8px; 
+            background-color: #f9f9f9; 
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!-- 引入FontAwesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+   
+<body>
+    <header>
+        <div class="container">
+            <h1>离散数学 - 2025年春季学期 - 3班</h1>
+            <nav>
+                <a href="#intro"><i class="fas fa-info-circle"></i>课程介绍</a>
+                <a href="#information"><i class="fas fa-calendar-alt"></i>课程信息</a>
+                <a href="#syllabus"><i class="fas fa-book"></i>教学大纲</a>
+                <a href="#homeworks"><i class="fas fa-pencil-alt"></i>家庭作业</a>
+                <a href="#resources"><i class="fas fa-folder-open"></i>课程资源</a>
+                <a href="#contact"><i class="fas fa-envelope"></i>联系方式</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>课程介绍</h2>
+            <p>离散数学（Discrete Mathematics）集成了数学中的多个不同分支，它主要研究离散对象的数学结构。离散数学是计算机科学与技术的基础。本课程在介绍数理逻辑入门知识和数学证明方法的基础上，系统地介绍集合、归纳与递归、关系、代数系统、计数与离散概率、图与树等基本的离散结构及相关的理论，使学生系统地掌握相关的数学模型、基本理论及应用技术。本课程是学习计算机科学与技术专业其它核心课程必须的数学基础课程，是理解数据结构、算法设计与分析、计算模型等学科分支的必备课程，对培养学生的抽象思维、逻辑推理以及问题求解能力有重要意义。</p>
+        </section>
+
+        <section id="information">
+            <h2>课程信息</h2>
+            <p>授课老师：<a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" class="content-link1">史颖欢</a> 教授</p>
+            <p>上课时间：周二 10: 10-12: 00；周二 18: 30-20: 20（习题课）；周五 14: 00-15: 50</p>
+            <p>上课地点：鼓楼校区 南教-201</p>
+            <p>课程QQ群：765978589</p>
+            <p>助教：王曦染，程子涵，刘思远，李熠城</p>
+            <p>If you encounter any issues with viewing, downloading course materials, or submitting assignments on this course website, 
+                please feel free to contact Cheng Zihan (email: czh@smail.nju.edu.cn; QQ:1433368350). What' more, if you have any compliments, descriptions, or complaints (about strengths or weaknesses) 
+                regarding our class's Discrete Mathematics course, please feel free to fill out <a href="https://wj.sjtu.edu.cn/q/eMFNv3uP" target="_blank" class="content-link1">this questionnaire</a>. 
+                Rest assured, this survey is completely anonymous. Your input is very valuable in helping us further improve the course and encouraging us to keep up the good work.</p>
+            <p style="color: red; font-weight: bold;">Important News：
+                None.</p>
+        </section>
+
+        <section id="syllabus">
+            <h2>教学大纲</h2>
+            <table>        
+                <tr><th>章节</th><th>内容</th><th>课程资源</th></tr>
+                <tr><th>〇、课程概况</th><td>1. 课程概况</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/00_%E8%AF%BE%E7%A8%8B%E6%A6%82%E5%86%B5.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><th>一、逻辑与证明</th><td>1. 命题逻辑</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/01_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91.pdf" target="_blank" class="content-link">上课课件</a>，
+                <a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>2. 命题逻辑（续）</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/02_%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%EF%BC%88%E7%BB%AD%EF%BC%89.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>3. 谓词逻辑初步</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/03_%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%88%9D%E6%AD%A5.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%BA%8C%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>4. 证明方法</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/04_%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><th>二、集合论</th><td>1. 集合及其运算</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/05_%E9%9B%86%E5%90%88%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97.pdf" target="_blank" class="content-link">上课课件</a>，
+                    <a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%89%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>2. 关系运算及函数</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/06_%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E5%8F%8A%E5%87%BD%E6%95%B0%20-%20%E5%89%AF%E6%9C%AC.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>3. 集合的基数</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/07_%E9%9B%86%E5%90%88%E7%9A%84%E5%9F%BA%E6%95%B0.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>4. 数论初步</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/08_%E6%95%B0%E8%AE%BA%E5%88%9D%E6%AD%A5-2.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><th>三、归纳与递归</th><td>1. 归纳与递归</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/09_%E5%BD%92%E7%BA%B3%E4%B8%8E%E9%80%92%E5%BD%92.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><th>四、计数与离散概率</th><td>1. 计数技术</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/10_%E8%AE%A1%E6%95%B0.pdf" target="_blank" class="content-link">上课课件</a>
+                 ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E5%85%AD%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>2. 离散概率</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/11_%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%20-%20%E5%89%AF%E6%9C%AC.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><th>五、关系</th><td>1. 关系的性质</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/12_%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8.pdf" target="_blank" class="content-link">上课课件</a>
+                 ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%83%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>2. 关系的闭包、等价关系</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/13_%E5%85%B3%E7%B3%BB%E7%9A%84%E9%97%AD%E5%8C%85%E5%92%8C%E7%AD%89%E4%BB%B7.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>3. 偏序与偏序格</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/14_%E5%81%8F%E5%BA%8F%E4%B8%8E%E5%81%8F%E5%BA%8F%E6%A0%BC.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E5%85%AB%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><th>六、代数系统</th><td>1. 代数系统引论</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/15_%E4%BB%A3%E6%95%B0%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>2. 群论导引</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/16_%E7%BE%A4%E8%AE%BA%E5%AF%BC%E5%BC%95.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/%E7%AC%AC9%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>3. 子群与拉格朗日定理</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/17_%E5%AD%90%E7%BE%A4%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AE%9A%E7%90%86.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>4. 循环群与群同构</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/18_%E5%BE%AA%E7%8E%AF%E7%BE%A4%E4%B8%8E%E7%BE%A4%E5%90%8C%E6%9E%84.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E7%AC%AC%E5%8D%81%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE_%E5%88%98%E6%80%9D%E8%BF%9C.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>5. 代数格</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/19_%E4%BB%A3%E6%95%B0%E6%A0%BC.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>6. 布尔代数</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/20_%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E7%AC%AC11%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE(1).pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><th>七、图论初步</th><td>1. 图的基本概念</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/21_%E5%9B%BE%E8%AE%BA-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>2. 图的连通性</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/22_%E5%9B%BE%E8%AE%BA-%E8%BF%9E%E9%80%9A%E6%80%A7.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>3. Euler图与Hamilton图</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/23_%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%BE%E4%B8%8E%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%9B%BE.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>4. 最短通路</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/24_%E5%9B%BE%E8%AE%BA-%E6%9C%80%E7%9F%AD%E9%80%9A%E8%B7%AF%E9%97%AE%E9%A2%98.pdf" target="_blank" class="content-link">上课课件</a>
+                 ，<a href="http://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE_%E5%88%98%E6%80%9D%E8%BF%9C.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>5. 二部图及匹配</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/25_%E5%9B%BE%E8%AE%BA-%E4%BA%8C%E9%83%A8%E5%9B%BE%E4%B8%8E%E5%8C%B9%E9%85%8D.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><th>八、树</th><td>1. 树的基本概念</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/26_%E6%A0%9101-%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.pdf" target="_blank" class="content-link">上课课件</a>
+                 ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E7%AC%AC14%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+                <tr><td></td><td>2. 树的应用</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/27_%E6%A0%9102-%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8.pdf" target="_blank" class="content-link">上课课件</a></td></tr>
+                <tr><td></td><td>3. 生成树</td><td><a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/28_%E6%A0%9103-%E7%94%9F%E6%88%90%E6%A0%91.pdf" target="_blank" class="content-link">上课课件</a>
+                ，<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">习题课课件</a></td></tr>
+            </table>
+        </section>
+        
+        <section id="homeworks">
+            <h2>家庭作业</h2>
+            <p> 作业提交的注意事项请大家参考<a href="https://gitee.com/nju-orange/DM2025/raw/master/2025%E7%AC%AC%E4%B8%80%E5%91%A8%E4%B9%A0%E9%A2%98%E8%AF%BE.pdf" target="_blank" class="content-link">第一次习题课课件</a>。<br>
+                [1] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework1.pdf" target="_blank" class="content-link">homework-1</a>，
+                请在<strong><font color="red">2月25日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/mkeRZ8Gg" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/solution1.pdf" target="_blank" class="content-link">答案</a><br>
+                [2] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework2.pdf" target="_blank" class="content-link">homework-2</a>，
+                请在<strong><font color="red">3月4日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/ERsTekNZ" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/solution2.pdf" target="_blank" class="content-link">答案</a><br>
+                [3] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework3.pdf" target="_blank" class="content-link">homework-3</a>，
+                请在<strong><font color="red">3月4日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/xnffS9Mc" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework3_solutions(10%E9%A2%98).pdf" target="_blank" class="content-link">答案</a><br>
+                [4] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_problem.pdf" target="_blank" class="content-link">homework-4</a>，
+                请在<strong><font color="red">3月11日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/LfEAosTJ" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework4_solution.pdf" target="_blank" class="content-link">答案</a><br>
+                [5] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_problem.pdf" target="_blank" class="content-link">homework-5</a>，
+                请在<strong><font color="red">3月18日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/X5v8fENz" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework5_solution.pdf" target="_blank" class="content-link">答案</a><br>
+                [6] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework6_problems(10%E9%A2%98).pdf" target="_blank" class="content-link">homework-6</a>，
+                请在<strong><font color="red">3月25日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/w5L2J2CN" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework6_solutions(10%E9%A2%98).pdf" target="_blank" class="content-link">答案</a><br>
+                [7] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework7.pdf" target="_blank" class="content-link">homework-7</a>，
+                请在<strong><font color="red">3月25日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/chqbaZqV" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/solution7.pdf" target="_blank" class="content-link">答案</a><br>
+                [8] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework8&9-problems.pdf" target="_blank" class="content-link">homework-8 & 9</a>，
+                请在<strong><font color="red">4月1日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/Xyxan9TV" target="_blank" class="content-link">这里</a>。
+                补交请联系马庆贺助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework8&9-solutions.pdf" target="_blank" class="content-link">答案</a><br>
+                [9] <a href="https://gitee.com/nju-orange/DM2025/raw/master/homework10.pdf" target="_blank" class="content-link">homework-10</a>，
+                请在<strong><font color="red">4月1日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/gEY6kmBm" target="_blank" class="content-link">这里</a>。
+                补交请联系马庆贺助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework10_solution.pdf" target="_blank" class="content-link">答案</a><br>
+                [10] <a href="https://gitee.com/nju-orange/DM2025/raw/master/Homework_11_12.pdf" target="_blank" class="content-link">homework-11 & 12</a>，
+                请在<strong><font color="red">4月8日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/i9kQRC9j" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/homework11&12%20_solution.pdf" target="_blank" class="content-link">答案</a><br>
+                [11] <a href="https://gitee.com/nju-orange/DM2025/raw/master/hw13.pdf" target="_blank" class="content-link">homework-13 & 14</a>，
+                请在<strong><font color="red">4月8日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/ZZVEYLS8" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/Solution%20hw13.pdf" target="_blank" class="content-link">答案</a><br>
+                [12] <a href="https://gitee.com/nju-orange/DM2025/raw/master/Problem%20Set%2015.pdf" target="_blank" class="content-link">homework-15</a>，
+                由于下周期中考试，本次作业无需提交，请大家结合答案认真复习。<strong><font color="red">祝大家考试顺利</font></strong>！
+                <a href="https://gitee.com/nju-orange/DM2025/raw/master/Solution%20Set%2015.pdf" target="_blank" class="content-link">答案</a><br>
+                [13] <a href="https://gitee.com/nju-orange/DM2025/raw/master/Problem%20Set%2016.pdf" target="_blank" class="content-link">homework-16</a>，
+                由于下周期中考试，本次作业无需提交，请大家结合答案认真复习。<strong><font color="red">祝大家考试顺利</font></strong>！
+                <a href="https://gitee.com/nju-orange/DM2025/raw/master/Solution%20Set%2016.pdf" target="_blank" class="content-link">答案</a><br>
+                [14] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/hw17p.pdf" target="_blank" class="content-link">homework-17</a>，
+                请在<strong><font color="red">4月22日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/wir6Fiv9" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/hw17s.pdf" target="_blank" class="content-link">答案</a><br>
+                [15] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/hw18p.pdf" target="_blank" class="content-link">homework-18</a>，
+                请在<strong><font color="red">4月22日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/Lujc8fhS" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/hw18s.pdf" target="_blank" class="content-link">答案</a><br>
+                [14] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Problem%20Set%2019.pdf" target="_blank" class="content-link">homework-19</a>，
+                请在<strong><font color="red">4月29日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/NT5sCHP3" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Solution%20Set%2019.pdf" target="_blank" class="content-link">答案</a><br>
+                [15] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Problem%20Set%2020.pdf" target="_blank" class="content-link">homework-20</a>，
+                请在<strong><font color="red">4月29日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/aRtuV5Ps" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Solution%20Set%2020.pdf" target="_blank" class="content-link">答案</a><br>
+                [16] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Problem%20Set%2021.pdf" target="_blank" class="content-link">homework-21</a>，
+                请在<strong><font color="red">5月6日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/nsJgR9sC" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Solution%20Set%2021.pdf" target="_blank" class="content-link">答案</a><br>
+                [17] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Problem%20Set%2022.pdf" target="_blank" class="content-link">homework-22</a>，
+                请在<strong><font color="red">5月13日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/ZJcqYYPa" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/Solution%20Set%2022.pdf" target="_blank" class="content-link">答案</a><br>
+                [18] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5&%E5%9B%BE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E5%9B%BE%E5%90%8C%E6%9E%84&%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7%EF%BC%88%E9%A2%98%E7%9B%AE%EF%BC%89.pdf" target="_blank" class="content-link">homework-23</a>，
+                请在<strong><font color="red">5月20日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/FfPnVTQP" target="_blank" class="content-link">这里</a>。
+                补交请联系刘思远助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5&%E5%9B%BE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E5%9B%BE%E5%90%8C%E6%9E%84&%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7%EF%BC%88%E7%AD%94%E6%A1%88%EF%BC%89.pdf" target="_blank" class="content-link">答案</a><br>
+                [19] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/hw24.pdf" target="_blank" class="content-link">homework-24</a>，
+                请在<strong><font color="red">5月27日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/6uSkdPym" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/%E6%AC%A7%E6%8B%89%E5%9B%BE%20%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%9B%BE%EF%BC%88%E7%AD%94%E6%A1%88%EF%BC%89.pdf" target="_blank" class="content-link">答案</a><br>
+                [20] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025_%E5%9B%BE%E8%AE%BA%E4%BD%9C%E4%B8%9A3_%E6%9C%80%E7%9F%AD%E9%80%9A%E8%B7%AF_homework.pdf" target="_blank" class="content-link">homework-25</a>，
+                请在<strong><font color="red">5月27日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/JHGKsNMc" target="_blank" class="content-link">这里</a>。
+                补交请联系李熠城助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025_%E5%9B%BE%E8%AE%BA%E4%BD%9C%E4%B8%9A3_%E6%9C%80%E7%9F%AD%E9%80%9A%E8%B7%AF_answer.pdf" target="_blank" class="content-link">答案</a><br>
+                [21] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/homework27-problems.pdf" target="_blank" class="content-link">homework-26</a>，
+                请在<strong><font color="red">6月3日上午10:00前</font></strong>提交<strong><font color="red">PDF文件</font></strong>至<a href="https://wj.sjtu.edu.cn/q/TzMtGmu5" target="_blank" class="content-link">这里</a>。
+                补交请联系王曦染助教。<a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/homework27-solutions.pdf" target="_blank" class="content-link">答案</a><br>
+                [22] <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025_%E5%9B%BE%E8%AE%BA%E4%BD%9C%E4%B8%9A4_%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5_%E5%BA%94%E7%94%A8_%E7%94%9F%E6%88%90%E6%A0%91_homework.pdf" target="_blank" class="content-link">homework-27</a>，
+                由于即将期末考试，本次作业无需提交，请大家结合答案认真复习。<strong><font color="red">祝大家考试顺利</font></strong>！
+                <a href="https://gitee.com/nju-orange/DM2025/raw/master/aftmid/2025_%E5%9B%BE%E8%AE%BA%E4%BD%9C%E4%B8%9A4_%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5_%E5%BA%94%E7%94%A8_%E7%94%9F%E6%88%90%E6%A0%91_answer.pdf" target="_blank" class="content-link">答案</a><br>
+<br>
+<br>
+            </p>
+        </section>
+        
+        <section id="resources">
+            <h2>课程资源</h2></h2>
+            <p>[1] <a href="https://box.nju.edu.cn/f/f3d92b641090432ea396/" target="_blank" class="content-link1">第七版</a>，仅限于课堂交流，建议购买原版，目前使用的是原书第八版。<br>
+            [2] <a href="https://box.nju.edu.cn/f/4e8153e3862f4f5c87da/" target="_blank" class="content-link1">离散数学（曲婉玲等）-代数系统、群、格与布尔代数部分.pdf</a>，仅限于课堂交流。<br>
+            [3] <a href="https://mp.weixin.qq.com/s/eWMKd6EqunAr-NreQ7-KFw" target="_blank" class="content-link1">离散数学经验帖-1</a>，<a href="https://mp.weixin.qq.com/s/LlUdE1nkevzxIiUjL5joHg" target="_blank" class="content-link1">离散数学经验帖-2</a>。<br> 
+            </p>  
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <!-- 教师信息表格 -->
+            <table class="centered-table">
+                <tr>
+                    <th class="teacher-column">教师</th>
+                    <th>邮箱</th>
+                    <th>办公室</th>
+                </tr>
+                <tr>
+                    <td class="teacher-column"><a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank" class="content-link1">史颖欢</a></td>
+                    <td>syh@nju.edu.cn</td>
+                    <td>计算机系楼-508（仙林）</td>
+                </tr>
+            </table>
+
+            <p></p>
+
+            <!-- 助教信息表格 -->
+            <table class="centered-table">
+                <tr>
+                    <th>助教</th>
+                    <th>邮箱</th>
+                    <th>QQ</th>
+                </tr>
+                <tr>
+                    <td><a href="https://zzwdx.github.io/" target="_blank" class="content-link1">王曦染</a> (22级博士生)</td>
+                    <td>zzwdx@smail.nju.edu.cn</td>
+                    <td>1967282230</td>
+                </tr>
+                <tr>
+                    <td><a href="https://orange-czh.github.io/" target="_blank" class="content-link1">程子涵</a> (24级博士生)</td>
+                    <td>czh@smail.nju.edu.cn</td>
+                    <td>1433368350</td>
+                </tr>
+                <tr>
+                    <td><a href="https://sirilaw.github.io/" target="_blank" class="content-link1">刘思远</a> (22级本科生)</td>
+                    <td>221220067@smail.nju.edu.cn </td>
+                    <td>480469140</td>
+                </tr>
+                <tr>
+                    <td>李熠城 (23级本科生)</td>
+                    <td>2863720408@qq.com</td>
+                    <td>2863720408</td>
+                </tr>
+            </table>
+            <p></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>祝各位同学学习顺利！ &copy; 2025</p>
+    </footer>
+     <script src="dist/canvas-nest.js" type="text/javascript" color="255,0,0" opacity="0.75" count="150" ></script>
+</body>
+</html>
+
+
